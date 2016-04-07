@@ -1,0 +1,31 @@
+(a) In the header file "GLWidget.h", there are 6 shapes
+Square (used for lowerbeak, legs, feet)
+Circle (used for joints and eye)
+Head
+Body
+Arm
+Upperbeak
+
+(b) Following sets exist
+In "GLWidget.cpp", push and pop are arranged as following
+(Body) - push, pop
+(Arm) - push, pop
+(Head, lowerbeak, upperbeak) - push,push,push,pop,pop,pop
+(Rightleg, Rightfoot) - push,push,pop,pop
+(Leftleg, Leftfoot) - push,push,pop,pop
+
+All parts have its tranlation to the pivot point (rotational point) in terms of body 
+width and body length. This is because Body is the root of the tree. 
+
+(C)
+Rotational movements are implemented using sin function and RotateInDegrees
+Translational movements are implemented using sin function and Translate
+
+Every part that has either rotational or translation movements have its own angle defined. 
+This is to control the movement range and speed for each part
+
+(d)
+This part is implemented throughout the function "void GLWidget::paintGL()"
+
+(e)
+Six rotational joints are drawn with white circles
